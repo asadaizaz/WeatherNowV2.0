@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WeatherNowV2</string>
+    <string name="nework_unavailable_message">Network unavailable</string>
+</resources>

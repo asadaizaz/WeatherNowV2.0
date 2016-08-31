@@ -145,6 +145,7 @@ public class WeatherFragment extends Fragment {
                 {
                     Log.d(TAG, "Permission granted");
                     permissionGranted = true;
+                    getForecast(latitude,longitude);
                 }
                 else
                 {
@@ -197,6 +198,8 @@ public class WeatherFragment extends Fragment {
             }
 
         } else {
+            permissionGranted = true;
+
 
             Geocoder geoCoder = new Geocoder(getActivity(), Locale.getDefault());
             StringBuilder builder = new StringBuilder();
@@ -304,6 +307,7 @@ public class WeatherFragment extends Fragment {
                     }
                 });
             } else {
+                if(permissionGranted=true)
                 Toast.makeText(getActivity(), R.string.nework_unavailable_message, Toast.LENGTH_LONG).show();
             }
         }
@@ -394,7 +398,8 @@ public class WeatherFragment extends Fragment {
                 }
             }
             else {
-                Toast.makeText(getActivity(), R.string.nework_unavailable_message, Toast.LENGTH_LONG).show();
+                if(permissionGranted=true)
+                    Toast.makeText(getActivity(), R.string.nework_unavailable_message, Toast.LENGTH_LONG).show();
 
             }
 
